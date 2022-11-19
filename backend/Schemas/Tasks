@@ -1,0 +1,22 @@
+
+    id: {
+        type: number,
+        required: true,
+    },
+
+    employeeId: {
+        type: number,
+        required: true,
+    },
+
+    description: {
+        type: string,
+        required: true,
+    },
+    finished: Boolean,
+    date: Date,
+    img: {
+        data: Buffer,
+        contentType: String,
+        default: null
+    }
