@@ -10,7 +10,12 @@ const routes = [
   {
     path: '/tasks',
     name: 'tasks',
-    component: () => import('../views/TasksView.vue')
+    component: () => import('../views/TasksView')
+  },
+  {
+    path: '/billing',
+    name: 'billing',
+    component: () => import('../views/BillingView')
   }
 ]
 

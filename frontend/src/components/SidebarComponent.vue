@@ -1,106 +1,86 @@
 <template>
-
-  <div v-if="user" class="d-flex sidebar" @mouseleave="extended = false">
+  <div v-if="user" class="sidebar d-flex" @mouseleave="extended = false">
 
     <div class="navbar-icons text-center" @mouseover="extended = true">
-        <ul class="nav">
-            <li class="nav-item">
-                <img src="../assets/img/calendar.png" />
-            </li>
 
-            <li class="nav-item">
-                <img src="../assets/img/list.png"/>
-            </li>
-            <li class="nav-item">
-                <img src="../assets/img/ready-stock.png"/>
-            </li>
-            <li class="nav-item">
-                <img src="../assets/img/receipt.png"/>
-            </li>
-        </ul>
+      <ul class="nav">
+        <a href="/"><li class="nav-item"><img src="../assets/img/calendar.png" /></li></a>
+
+        <a href="/tasks"><li class="nav-item"><img src="../assets/img/list.png" /></li></a>
+        
+        <a href="/stock"><li class="nav-item"><img src="../assets/img/ready-stock.png" /></li></a>
+
+        <a href="/billing"><li class="nav-item"><img src="../assets/img/receipt.png" /></li></a>
+      </ul>
+
     </div>
 
-    <div class="navbar-extended" v-show="extended">
-        <ul class="nav row">
-            <li class="nav-item">
-                <a class="nav-link fs-5" href="/">Reservas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link fs-5" href="/tasks">Tareas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link fs-5" href="/stock">Inventario</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link fs-5" href="/billing">Facturacion</a>
-            </li>
-        </ul>
+    <div class="navbar-extended" v-if="extended">
+
+      <ul class="nav row">
+        <a class="nav-link fs-5" href="/"><li class="nav-item">Reservas</li></a>
+
+        <a class="nav-link fs-5" href="/tasks"><li class="nav-item">Tareas</li></a>
+
+        <a class="nav-link fs-5" href="/stock"><li class="nav-item">Inventario</li></a>
+
+        <a class="nav-link fs-5" href="/billing"><li class="nav-item">Facturacion</li></a>
+
+      </ul>
+
     </div>
 
   </div>
-
 </template>
 
 <script>
-import { computed } from '@vue/runtime-core';
-import { useStore } from 'vuex';
+import { computed } from "@vue/runtime-core";
+import { useStore } from "vuex";
+import { ref } from 'vue'
 
 export default {
-    setup() {
-        const store = useStore()
+  setup() {
+    const store = useStore();
+    let extended = ref(false)
+    let user = computed(() => store.state.user)
 
-        return {
-            user: computed(() => store.state.user)
-        }
-    }
-    
+    return {  user, extended  }
+  },
 };
 </script>
 
 <style scoped>
-
 .sidebar {
-    position: absolute;
-    top: 0;
-    height: 150vh;
-    z-index: -1;
-    
-}
-
-.d-flex {
-    width: 23vw;
+  height: 100vh;
+  position: absolute;
 }
 
 .navbar-icons {
-    padding-top: 3rem;
-    min-width: 60px;
-    max-width: 60px;
-    background: #E8E8E8;
+  width: 50px;
+  background: #E8E8E8;
 }
-
-.nav-item {
-    width: 100%;
-}
-
-.nav {
-    padding-top: 2rem;
+a {
+  width: 100%;
 }
 
 .navbar-extended {
-    padding-top: 4rem;
-    padding-left: 1rem;
-    background: #EFEFEF;
+  padding-top: 3rem;
+  padding-left: 1rem;
+  background: #efefef;
+  width: 200px;
+  position: relative;
 }
 
-li a{
-    margin-top: 35px;
-    color: #333;
+.navbar-extended li {
+  color: #333333;
+  padding-left: 10px;
+  margin-bottom: 35px;
+
 }
 
 img {
-    width: 24px;
-    height: auto;
-    margin-top: 58px;
+  width: 22px;
+  height: auto;
+  margin-top: 58px;
 }
-
 </style>

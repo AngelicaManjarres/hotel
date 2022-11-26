@@ -12,7 +12,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
+
 import LoginFormComponent from "../components/Login/LoginFormComponent";
 
 export default {

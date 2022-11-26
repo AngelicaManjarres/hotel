@@ -44,7 +44,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 form {
     margin: auto;
 }
@@ -59,6 +59,6 @@ input {
 }
 
 button {
-    background: #2e4372 !important;
+    background: var(--main-color) !important;
 }
 </style>

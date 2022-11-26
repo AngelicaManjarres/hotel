@@ -1,5 +1,5 @@
 <template>
-  <div class="clearfix">
+  <div>
     <Header />    
     <Sidebar></Sidebar>
      <router-view />
@@ -19,14 +19,21 @@ export default {
 </script>
 
 <style>
+:root {
+    --main-color: #2e4372;
+    --font-color: #333333;
+}
+
 #app {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   font-family: "Akshar", Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #333;
+  color: var(--font-color);
   margin: 0;
   padding: 0;
-  z-index: -1;
 }
 
 body {
@@ -37,6 +44,7 @@ body {
 button {
   padding: 10px 25px !important;
   border-radius: 0 !important;
+  background: var(--main-color);
 }
 
 button:hover {
