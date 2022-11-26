@@ -1,13 +1,13 @@
 const express = require('express')
 const router = express.Router()
 const User = require('../model/UserModel')
-const conn = require('../model/db')
+const db = require('../model/db')
 const session = require('express-session')
 let state
 
 router.post('/', async (req, res) => {
     try {
-        await conn()
+        await db()
         User.findOne({username: req.body.username, password: req.body.password}, (err, user) => {
             if(err) {
                 console.log(err)
