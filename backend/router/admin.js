@@ -1,15 +1,11 @@
 const express = require('express')
 const router = express.Router()
-<<<<<<< HEAD
 const Task = require('../model/TasksModel');
-const db = require('../model/db');
 const User = require('../model/UserModel');
-=======
+
 const Bills = require('../model/BillModel')
 const conn = require('../model/db')
 const db = require('../model/db')
-
->>>>>>> 5f0978683da985b30b18c590593047c46f57ecef
 
 router.get('/booking', (req, res) => {
     console.log("Booking admin")
@@ -64,7 +60,6 @@ router.put('/tasks/edit/:id',async (req, res) => {
     }
 });
 
-<<<<<<< HEAD
 router.delete('/tasks/delete/:id',async (req, res) => {
     try{
         await db()
@@ -75,7 +70,7 @@ router.delete('/tasks/delete/:id',async (req, res) => {
         console.log(`An error has ocurred ${err}`) 
     }
 });
-=======
+
 //Billing routing
 router.get('/billing', async(req, res) => {
     try {
