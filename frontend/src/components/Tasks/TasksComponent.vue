@@ -2,7 +2,7 @@
   <div>
     <div v-for="task in tasks" :key="task.id" class="card mt-3 w-75 mx-auto border-left-red">
       <div class="card-body">
-        <h4>{{ task.employee }}</h4>
+        <h4>{{ task.employeeId }}</h4>
         <p>{{ task.description }}</p>
         <p>Finalzada:
           <strong v-if="task.finished">{{task.date}}</strong>
@@ -23,7 +23,7 @@ export default {
   methods: {},
   async created() {
     try {
-      let res = await axios.get("http://localhost:3000/tasks");
+      let res = await axios.get("http://localhost:4200/admin/tasks");
       this.tasks = res.data;
       console.log(this.tasks);
     } catch (err) {

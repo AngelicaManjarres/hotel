@@ -1,0 +1,76 @@
+<template>
+  <form class="card d-flex w-50 mx-auto p-5">
+    <select id="employeeName" class="fieldsForm mt-3">
+      <option>Nombre del empleado</option>
+      <option  v-for="employee in employees" :key="employee._id">
+        {{ employee.name }}
+      </option>
+    </select>
+    <textarea
+      class="fieldsForm mt-3"
+      type="text"
+      id="typeTasks"
+      placeholder="Tipo de tarea" 
+      v-model="description"
+    ></textarea>
+    <div class="text-center">
+      <button class="btn btnAdd mt-5" type="submit" @click.prevent="saveTask">
+        Agregar Tarea
+      </button>
+    </div>
+  </form>
+</template>
+<script>
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      employeeId: 123456789,
+      description:'',
+      employees: [],
+    };
+  },
+  methods: {
+    saveTask() {
+     axios.post("http://localhost:4200/admin/tasks",{employeeId:this.employeeId,description:this.description})
+     .then(res=>console.log(res.data))
+     .catch(err=>console.log(err))
+    },
+  },
+  beforeMount() {
+    console.log("Antes de montar el comp");
+    axios
+      .get("http://localhost:4200/admin/employees")
+      .then((res) => (this.employees = res.data))
+      .catch((err) => console.log(err));
+  },
+};
+</script>
+<style scoped>
+.card {
+  background: #f4f4f4;
+  box-shadow: 0px 4px 15px #333;
+}
+.fieldsForm {
+  margin: auto;
+  background: #f4f4f4;
+  width: 80%;
+  border: none;
+  border-bottom: 2px solid #777777;
+  padding: 5px;
+}
+.btnAdd {
+  color: white;
+  max-width: 160px;
+  min-width: 150px;
+  border: none;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  form {
+    width: 80% !important;
+  }
+}
+</style>

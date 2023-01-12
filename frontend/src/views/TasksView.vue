@@ -2,13 +2,12 @@
 <template>
   <div class="container">
     <h2>Tareas</h2>
-    <div v-if="user.role == 'admin'">
+    <div>
       <FilterComponent></FilterComponent>
       <TaskComponent></TaskComponent>
       <AddButton></AddButton>
     </div>
-
-    <div v-if="user.role == 'employee'">
+    <div>
       <p>No tienes tareas asignadas</p>
     </div>
   </div>
@@ -39,10 +38,6 @@ export default {
   }
 };
 </script>
-
-
-
-
 <style scoped>
 h2 {
   font-size: 1.7rem;

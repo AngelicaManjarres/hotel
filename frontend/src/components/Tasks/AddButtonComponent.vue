@@ -1,6 +1,6 @@
 <template>
   <div  class="circle">
-    <div class="btn-circle">+</div>
+    <div class="btn-circle"><router-link class="link1" to="addTasks">+</router-link></div>
   </div>
 </template>
 
@@ -23,5 +23,9 @@
     background: #2e4372 !important;
     display: flex;
     justify-content: center;
+}
+.link1{
+  text-decoration: none;
+  color: white;
 }
 </style>
