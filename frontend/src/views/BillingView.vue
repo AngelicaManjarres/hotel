@@ -7,7 +7,7 @@
 
     <table>
             <tr> 
-                <th>Código</th>
+                <th>Cód</th>
                 <th>Nombre</th>
                 <th>Cantidad</th>
                 <th>Concepto</th>
