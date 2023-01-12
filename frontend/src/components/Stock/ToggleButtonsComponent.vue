@@ -18,6 +18,21 @@ export default {
 
 .buttons {
     width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+button {
+    padding: 5px 40px !important;
+    margin-left: 10px;
+    color: #fff;
+}
+.sell {
+    background: #F1F1F1;
+    border: 2px solid #ccc;
+    color: #333;
 }
 
 </style>
