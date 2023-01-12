@@ -31,7 +31,7 @@
         </table>
 
     <div class="add-bill">
-        <button class="toggleBillingForm" @click="toggleBillingForm = true">General Factura</button>
+        <button class="toggleBillingForm" @click="toggleBillingForm = true">Generar Factura</button>
     </div>
     
   </div>
