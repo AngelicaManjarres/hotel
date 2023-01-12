@@ -1,17 +1,19 @@
 const express = require('express')
 const router = express.Router()
 const Task = require('../model/TasksModel');
-const User = require('../model/UserModel');
-
 const Bills = require('../model/BillModel')
+const User = require('../model/UserModel');
 const conn = require('../model/db')
 const db = require('../model/db')
+
 
 router.get('/booking', (req, res) => {
     console.log("Booking admin")
 })
 
+
 //Rutas tasks
+//Get tasks
 router.get('/tasks', async (req, res) => {
     try{
         await db()
@@ -26,7 +28,7 @@ router.get('/tasks', async (req, res) => {
         console.log(`An error has ocurred ${err}`)
     }
 })
-
+//post tasks
 router.post('/tasks', async (req, res) => {
     try{
         await db()
@@ -43,6 +45,7 @@ router.post('/tasks', async (req, res) => {
     }
 })
 
+//Edit tasks
 router.put('/tasks/edit/:id',async (req, res) => {
     try{
         await db()
@@ -59,7 +62,7 @@ router.put('/tasks/edit/:id',async (req, res) => {
         console.log(`An error has ocurred ${err}`)
     }
 });
-
+//delete tasks
 router.delete('/tasks/delete/:id',async (req, res) => {
     try{
         await db()
@@ -70,6 +73,7 @@ router.delete('/tasks/delete/:id',async (req, res) => {
         console.log(`An error has ocurred ${err}`) 
     }
 });
+
 
 //Billing routing
 router.get('/billing', async(req, res) => {
@@ -105,18 +109,7 @@ router.delete('/billing', async(req, res) => {
     res.json('gpost bills')
 })
 
-router.get('/employees',async(req,res)=>{
-    try{
-        await db()
-        User.find({},(err,users)=>{
-        if(err){
-            console.log(err);
-        }else{
-            res.status(202).json(users);
-        }
-    })
-    }catch(err){
-        console.log(`An error has ocurred ${err}`)
-    }
-})
+
+
+
 module.exports = router
