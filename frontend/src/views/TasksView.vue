@@ -60,7 +60,8 @@ export default {
 <style scoped>
 
 .container {
-  margin: 2rem 4rem;
+  margin-top: 2rem;
+  margin-left: 4rem;
 }
 
 h2 {

@@ -60,14 +60,14 @@ export default {
   background: #E8E8E8;
 }
 a {
-  width: 100%;
+  width: 80%;
 }
 
 .navbar-extended {
   padding-top: 3rem;
   padding-left: 1rem;
   background: #efefef;
-  width: 220px;
+  width: 210px;
 
 }
 
