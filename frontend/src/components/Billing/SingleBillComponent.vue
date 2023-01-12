@@ -27,6 +27,7 @@ export default {
     name: 'SingleBillComponent',
     props: ['bill'],
     setup(props, { emit }) {
+
         const handleClose = () => {
             emit('closeSingleBill')
         }
@@ -36,19 +37,15 @@ export default {
                 margin: 2,
                 filename: 'recibo-casa-levy.pdf'
             })
-            console.log('Printin pdf')
+            console.log('Printing pdf')
         }
-
-        const print = () => console.log(props.bill)
-
-        print()
 
         return { handleClose, generatePdf }
     }
 }
 </script>
 
-<style>
+<style scoped>
 .close {
     float: right;
     padding: 10px;

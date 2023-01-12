@@ -3,7 +3,7 @@
   <div class="container">
     <h2>Facturación</h2>
     <!--Searchbar-->
-    <searchbar-component @do-search="print"/>
+    <searchbar @do-search="print"/>
 
     <table>
             <tr> 
@@ -13,52 +13,60 @@
                 <th>Concepto</th>
             </tr>
 
-            <tr v-for="bill in bills" :key="bill._id" @click="openSingleBill(bill._id)">
+            <tr v-for="bill in bills" :key="bill._id" @click="openBill()">
                 <td>{{ bill.code }}</td>
                 <td>{{ bill.name }}</td>
                 <td>{{ bill.total }}</td>
                 <td>{{ bill.reference[0].title }}</td>
+                <td class="bg-info p-2" @click.stop="deleteBill(bill._id)">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </td>
+                <td class="bg-danger p-2" @click.stop="deleteBill(bill._id)">
+                  <i class="fa-solid fa-trash"></i>
+                </td>
             </tr>
 
         </table>
 
     <div class="add-bill">
-        <button @click="toggleBillingForm = true">General Factura</button>
+        <button class="toggleBillingForm" @click="toggleBillingForm = true">General Factura</button>
     </div>
     
   </div>
-<billing-form-component class="billing-form" v-if="toggleBillingForm" @close-form="closeBillingForm" />
-<single-bill-component class="single-bill" v-if="toggleSingleBill" @close-single-bill="closeSingleBill" :bill="bill" />
+<billing-form class="billing-form" v-if="toggleBillingForm" @close-form="closeBillingForm" />
+<single-bill class="single-bill" v-if="toggleSingleBill" @close-single-bill="closeSingleBill" :bill="bill" />
 </div>
 </template>
 
 <script>
 import { computed, ref } from 'vue'
-import BillingFormComponent from '../components/Billing/BillingFormComponent'
-import SingleBillComponent from '../components/Billing/SingleBillComponent'
-import SearchbarComponent from '../components/Billing/SearchbarBillingComponent'
+import BillingForm from '../components/Billing/BillingFormComponent'
+import SingleBill from '../components/Billing/SingleBillComponent'
+import Searchbar from '../components/Billing/SearchbarBillingComponent'
 
 //Composable
 import { getRequest } from '../composables/getReq.js'
 
 export default {
     components: {
-        BillingFormComponent,
-        SingleBillComponent,
-        SearchbarComponent
+        BillingForm,
+        SingleBill,
+        Searchbar
     },
     setup() {
-        let bill = ref([])
+        let bill = ref({code: 1, name: "Angelica", total:38000, date: '07/07/2022' })
         let toggleBillingForm = ref(false)
         let toggleSingleBill = ref(false)
-
         //Getting all bills
         const bills = getRequest('http://localhost:4200/admin/billing')
 
-
         //Opening single bill block
-        const openSingleBill = (id) => {
-            toggleSingleBill.value = true
+        const openBill = (id) => {
+          bill = computed(() => {
+            bills.value.filter(single => single._id == id)
+          })
+          console.log(bill)
+          toggleSingleBill.value = true
         }
 
         //Closing single bill block
@@ -74,10 +82,14 @@ export default {
 
 
         //Search bar functionality
-        const print = (word) => console.log(word) 
+        const print = () => console.log("Hello world")
+
+        const deleteBill = (id) => {
+          bill = bills.value.filter(single => single._id == id)
+          console.log(bill)
+        }
        
-  
-        return { toggleBillingForm, toggleSingleBill, closeBillingForm, openSingleBill, closeSingleBill, bills, bill, print }
+        return { toggleBillingForm, toggleSingleBill, closeBillingForm, openBill, closeSingleBill, bills, bill, print, deleteBill }
         
     }
 }
@@ -106,6 +118,12 @@ td {
     cursor: pointer;
 }
 
+.toggleBillingForm {
+    background: #BCE742;
+    border: none;
+}
+
+
 
 /*Billing form*/
 .billing-form {
@@ -126,11 +144,6 @@ td {
 /* Genera factura */
 .add-bill {
     text-align: right;
-}
-
-button {
-    background: #BCE742;
-    border: none;
 }
 
 /* Media Qeuries */
