@@ -1,4 +1,6 @@
 <template>
+
+
 <div id="billing">
   <div class="container">
     <h2>Facturación</h2>
@@ -7,7 +9,7 @@
 
     <table>
             <tr> 
-                <th>Cód</th>
+                <th>Código</th>
                 <th>Nombre</th>
                 <th>Cantidad</th>
                 <th>Concepto</th>
