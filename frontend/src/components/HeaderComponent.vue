@@ -1,5 +1,5 @@
 <template>
-  <div class="clearfix">
+  <div>
     <div class="home-nav d-flex">
       <div class="container-fluid d-flex justify-content-between px-4">
         <div class="row header-left">
