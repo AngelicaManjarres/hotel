@@ -1,19 +1,14 @@
 <template>
   <div>
-    <Header />    
-    <Sidebar></Sidebar>
      <router-view />
   </div>
 </template>
 
 <script>
-import Sidebar from './components/SidebarComponent'
-import Header from './components/HeaderComponent'
 
 export default {
   components: {
-    Sidebar,
-    Header
+    
   },
 };
 </script>

@@ -16,6 +16,11 @@ const routes = [
     path: '/billing',
     name: 'billing',
     component: () => import('../views/BillingView')
+  },
+  {
+    path: '/stock',
+    name: 'stock',
+    component: () => import('../views/StockView')
   }
 ]
 

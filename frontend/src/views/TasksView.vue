@@ -1,25 +1,38 @@
 <!-- Tasks Alejandra -->
 <template>
-  <div class="container">
-    <h2>Tareas</h2>
-    <div v-if="user.role == 'admin'">
-      <FilterComponent></FilterComponent>
-      <TaskComponent></TaskComponent>
-      <AddButton></AddButton>
-    </div>
+  <div>
+    <Header />
+    <Sidebar />
+    <div class="container">
+      <h2>Tareas</h2>
 
-    <div v-if="user.role == 'employee'">
-      <p>No tienes tareas asignadas</p>
+      <div v-if="user">
+        <div v-if="user.role == 'admin'">
+          <FilterComponent></FilterComponent>
+          <TaskComponent></TaskComponent>
+          <AddButton></AddButton>
+        </div>
+
+        <div v-if="user.role == 'employee'">
+          <p>No tienes tareas asignadas</p>
+        </div>
+      </div>
+
+      <div v-if="!user">
+        <p>There's been a loggin error</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Header from "../components/HeaderComponent.vue";
+import Sidebar from "../components/SidebarComponent.vue";
 import FilterComponent from "../components/Tasks/FiltersComponent";
 import TaskComponent from "../components/Tasks/TasksComponent";
 import AddButton from "../components/Tasks/AddButtonComponent";
-import { useStore } from 'vuex';
-import { computed } from '@vue/runtime-core';
+import { useStore } from "vuex";
+import { computed } from "@vue/runtime-core";
 
 export default {
   name: "TaskView",
@@ -27,16 +40,17 @@ export default {
     FilterComponent,
     TaskComponent,
     AddButton,
+    Header,
+    Sidebar,
   },
 
   setup() {
-    const store = useStore()
+    const store = useStore();
 
     return {
-      user: computed(() => store.state.user)
-    }
-
-  }
+      user: computed(() => store.state.user),
+    };
+  },
 };
 </script>
 
@@ -44,8 +58,13 @@ export default {
 
 
 <style scoped>
+
+.container {
+  margin: 2rem 4rem;
+}
+
 h2 {
   font-size: 1.7rem;
-  margin: 2rem 4rem;
+  
 }
 </style>

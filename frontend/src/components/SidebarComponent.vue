@@ -1,16 +1,16 @@
 <template>
-  <div v-if="user" class="sidebar d-flex" @mouseleave="extended = false">
+  <div class="sidebar d-flex" @mouseleave="extended = false">
 
     <div class="navbar-icons text-center" @mouseover="extended = true">
 
       <ul class="nav">
-        <a href="/"><li class="nav-item"><img src="../assets/img/calendar.png" /></li></a>
+        <li class="nav-item"><img src="../assets/img/calendar.png" /></li>
 
-        <a href="/tasks"><li class="nav-item"><img src="../assets/img/list.png" /></li></a>
+        <li class="nav-item"><img src="../assets/img/list.png" /></li>
         
-        <a href="/stock"><li class="nav-item"><img src="../assets/img/ready-stock.png" /></li></a>
+        <li class="nav-item"><img src="../assets/img/ready-stock.png" /></li>
 
-        <a href="/billing"><li class="nav-item"><img src="../assets/img/receipt.png" /></li></a>
+        <li class="nav-item"><img src="../assets/img/receipt.png" /></li>
       </ul>
 
     </div>
@@ -34,17 +34,13 @@
 </template>
 
 <script>
-import { computed } from "@vue/runtime-core";
-import { useStore } from "vuex";
 import { ref } from 'vue'
 
 export default {
   setup() {
-    const store = useStore();
     let extended = ref(false)
-    let user = computed(() => store.state.user)
 
-    return {  user, extended  }
+    return { extended }
   },
 };
 </script>
@@ -53,6 +49,10 @@ export default {
 .sidebar {
   height: 100vh;
   position: absolute;
+}
+
+.nav li {
+  width: 100%;
 }
 
 .navbar-icons {
@@ -67,8 +67,8 @@ a {
   padding-top: 3rem;
   padding-left: 1rem;
   background: #efefef;
-  width: 200px;
-  position: relative;
+  width: 220px;
+
 }
 
 .navbar-extended li {
