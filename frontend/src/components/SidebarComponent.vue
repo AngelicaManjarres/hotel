@@ -18,7 +18,7 @@
     <div class="navbar-extended" v-if="extended">
 
       <ul class="nav row">
-        <a class="nav-link fs-5" href="/"><li class="nav-item">Reservas</li></a>
+        <a class="nav-link fs-5" href="/booking"><li class="nav-item">Reservas</li></a>
 
         <a class="nav-link fs-5" href="/tasks"><li class="nav-item">Tareas</li></a>
 

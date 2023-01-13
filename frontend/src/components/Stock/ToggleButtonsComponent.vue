@@ -3,7 +3,6 @@
 <div class="buttons">
     <button class="buy">Compras</button>
     <button class="sell">Ventas</button>
-
 </div>
   
 </template>
@@ -20,14 +19,14 @@ export default {
     width: 80%;
     display: flex;
     justify-content: space-evenly;
-    margin-left: 5px;
+    margin-left: 15px;
     margin-top: 10px;
 }
 
 button {
-    padding: 5px 40px !important;
-    margin-left: 10px;
+    padding: 5px 45px !important;
     color: #fff;
+    margin-left: 10px;
 }
 .sell {
     background: #F1F1F1;

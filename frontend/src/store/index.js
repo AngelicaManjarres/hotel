@@ -19,7 +19,7 @@ export default createStore({
       const res = await axios.post('http://localhost:4200/', { username, password })
       if(res.data) {
         context.commit('setUser', res.data)
-        router.push({name:'tasks'})
+        router.push('/booking')
         
       } else {
         console.log("Usuario no encontrado")

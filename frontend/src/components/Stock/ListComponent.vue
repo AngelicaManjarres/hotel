@@ -52,6 +52,7 @@ th {
 td {
     font-size: 14px;
     border: 1px solid #666;
+    padding: 13px 5px;
 }
 
 </style>

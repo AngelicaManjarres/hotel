@@ -14,7 +14,7 @@
         
     </div>
 
-    <AddButton />
+    <AddButton @click="$router.push('/addStock')" />
 
 </div>
   
@@ -36,7 +36,7 @@ export default {
         Buttons,
         List,
         AddButton
-    }
+    },
 
 }
 </script>

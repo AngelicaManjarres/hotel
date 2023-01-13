@@ -40,6 +40,7 @@ button {
   padding: 10px 25px !important;
   border-radius: 0 !important;
   background: var(--main-color);
+  color: #fff;
 }
 
 button:hover {
