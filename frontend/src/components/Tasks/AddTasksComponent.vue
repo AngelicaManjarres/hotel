@@ -48,6 +48,9 @@ export default {
 };
 </script>
 <style scoped>
+ form {
+    width: 80% !important;
+  }
 .card {
   background: #f4f4f4;
   box-shadow: 0px 4px 15px #333;
@@ -66,11 +69,5 @@ export default {
   min-width: 150px;
   border: none;
   border-radius: 10px;
-}
-
-@media screen and (max-width: 500px) {
-  form {
-    width: 80% !important;
-  }
 }
 </style>

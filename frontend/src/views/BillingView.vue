@@ -82,16 +82,12 @@ export default {
             console.log(toggleBillingForm.value)
         }
 
-
-        //Search bar functionality
-        const print = () => console.log("Hello world")
-
         const deleteBill = (id) => {
           bill = bills.value.filter(single => single._id == id)
           console.log(bill)
         }
        
-        return { toggleBillingForm, toggleSingleBill, closeBillingForm, openBill, closeSingleBill, bills, bill, print, deleteBill }
+        return { toggleBillingForm, toggleSingleBill, closeBillingForm, openBill, closeSingleBill, bills, bill, deleteBill }
         
     }
 }

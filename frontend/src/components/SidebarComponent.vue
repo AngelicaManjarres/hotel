@@ -1,16 +1,16 @@
 <template>
-  <div v-if="user" class="sidebar d-flex" @mouseleave="extended = false">
+  <div class="sidebar d-flex" @mouseleave="extended = false">
 
     <div class="navbar-icons text-center" @mouseover="extended = true">
 
       <ul class="nav">
-        <a href="/"><li class="nav-item"><img src="../assets/img/calendar.png" /></li></a>
+        <li class="nav-item"><img src="../assets/img/calendar.png" /></li>
 
-        <a href="/tasks"><li class="nav-item"><img src="../assets/img/list.png" /></li></a>
+        <li class="nav-item"><img src="../assets/img/list.png" /></li>
         
-        <a href="/stock"><li class="nav-item"><img src="../assets/img/ready-stock.png" /></li></a>
+        <li class="nav-item"><img src="../assets/img/ready-stock.png" /></li>
 
-        <a href="/billing"><li class="nav-item"><img src="../assets/img/receipt.png" /></li></a>
+        <li class="nav-item"><img src="../assets/img/receipt.png" /></li>
       </ul>
 
     </div>
@@ -18,7 +18,7 @@
     <div class="navbar-extended" v-if="extended">
 
       <ul class="nav row">
-        <a class="nav-link fs-5" href="/"><li class="nav-item">Reservas</li></a>
+        <a class="nav-link fs-5" href="/booking"><li class="nav-item">Reservas</li></a>
 
         <a class="nav-link fs-5" href="/tasks"><li class="nav-item">Tareas</li></a>
 
@@ -34,17 +34,13 @@
 </template>
 
 <script>
-import { computed } from "@vue/runtime-core";
-import { useStore } from "vuex";
 import { ref } from 'vue'
 
 export default {
   setup() {
-    const store = useStore();
     let extended = ref(false)
-    let user = computed(() => store.state.user)
 
-    return {  user, extended  }
+    return { extended }
   },
 };
 </script>
@@ -55,20 +51,24 @@ export default {
   position: absolute;
 }
 
+.nav li {
+  width: 100%;
+}
+
 .navbar-icons {
   width: 50px;
   background: #E8E8E8;
 }
 a {
-  width: 100%;
+  width: 80%;
 }
 
 .navbar-extended {
   padding-top: 3rem;
   padding-left: 1rem;
   background: #efefef;
-  width: 200px;
-  position: relative;
+  width: 210px;
+
 }
 
 .navbar-extended li {

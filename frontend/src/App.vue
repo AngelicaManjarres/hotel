@@ -1,19 +1,14 @@
 <template>
   <div>
-    <Header />    
-    <Sidebar></Sidebar>
      <router-view />
   </div>
 </template>
 
 <script>
-import Sidebar from './components/SidebarComponent'
-import Header from './components/HeaderComponent'
 
 export default {
   components: {
-    Sidebar,
-    Header
+    
   },
 };
 </script>
@@ -45,6 +40,7 @@ button {
   padding: 10px 25px !important;
   border-radius: 0 !important;
   background: var(--main-color);
+  color: #fff;
 }
 
 button:hover {

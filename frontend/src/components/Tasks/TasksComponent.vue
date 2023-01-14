@@ -9,6 +9,8 @@
           <strong v-if="!task.finished">-</strong>
           </p>
       </div>
+      <button class="btn btn-info p-2"><i class="fa-solid fa-pen-to-square"></i></button>
+      <button class="btn btn-info p-2"><i class="fa-solid fa-trash"></i></button>
     </div>
   </div>
 </template>
