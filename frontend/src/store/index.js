@@ -4,7 +4,10 @@ import router from '@/router'
 
 export default createStore({
   state: {
-    user: null
+    user:{
+      user:"Aleja",
+      role:"admin",
+    }
   },
   getters: {
   },

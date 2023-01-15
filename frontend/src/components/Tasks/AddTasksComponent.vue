@@ -1,20 +1,20 @@
 <template>
-  <form class="card d-flex w-50 mx-auto p-5">
-    <select id="employeeName" class="fieldsForm mt-3">
-      <option>Nombre del empleado</option>
+  <form class="card d-flex w-50 mx-auto pt-4 pb-3 ps-2 pe-2">
+    <select id="employeeName" class="w-75 fieldsForm mt-3">
+      <option class="form-select">Nombre del empleado</option>
       <option  v-for="employee in employees" :key="employee._id">
         {{ employee.name }}
       </option>
     </select>
     <textarea
-      class="fieldsForm mt-3"
+      class="fieldsForm mt-4"
       type="text"
       id="typeTasks"
       placeholder="Tipo de tarea" 
       v-model="description"
     ></textarea>
     <div class="text-center">
-      <button class="btn btnAdd mt-5" type="submit" @click.prevent="saveTask">
+      <button class="btn btnAdd mt-4" type="submit" @click.prevent="saveTask">
         Agregar Tarea
       </button>
     </div>
@@ -65,6 +65,7 @@ export default {
 }
 .btnAdd {
   color: white;
+  background: #2e4372 !important;
   max-width: 160px;
   min-width: 150px;
   border: none;

@@ -13,6 +13,16 @@ const routes = [
     component: () => import('../views/TasksView')
   },
   {
+    path: '/addTasks',
+    name: 'addTasks',
+    component: () => import('../views/AddTasksView')
+  },
+  {
+    path: '/editTasks',
+    name: 'editTasks',
+    component: () => import('../views/EditTasksView')
+  },
+  {
     path: '/billing',
     name: 'billing',
     component: () => import('../views/BillingView')

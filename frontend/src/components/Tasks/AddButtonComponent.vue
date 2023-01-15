@@ -17,8 +17,8 @@
     width: 50px;
     height: 50px;
     position:fixed;
-    bottom: 10px;
-    right: 10px;
+    bottom: 20px;
+    right: 20px;
     border-radius: 50%;
     background: #2e4372 !important;
     display: flex;

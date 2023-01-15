@@ -1,7 +1,5 @@
 <template>
   <div class="container">
-    <strong @click="$emit('closeForm')" class="close display-6">X</strong>
-    <br />
     <h3>Editar Tarea</h3>
     <form class="mx-auto p-5">
       <select id="employeeName" class="fieldsForm mt-3">
