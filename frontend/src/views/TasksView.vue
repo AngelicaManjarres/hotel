@@ -58,7 +58,6 @@ export default {
 
 
 <style scoped>
-
 .container {
   margin-top: 2rem;
   margin-left: 4rem;

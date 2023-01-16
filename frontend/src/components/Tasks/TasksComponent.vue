@@ -7,13 +7,14 @@
         <p>Finalzada:
           <strong v-if="task.finished">{{task.date}}</strong>
           <strong v-if="!task.finished">-</strong>
-          </p>
+        </p>
       </div>
     </div>
   </div>
 </template>
 <script>
 import axios from "axios";
+
 export default {
   data() {
     return {
