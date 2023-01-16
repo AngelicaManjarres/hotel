@@ -2,7 +2,7 @@
   <div>
     <Header />
     <Sidebar />
-    <div class="ms-5 mt-5 ">
+    <div class="ms-5 mt-5">
       <h2 class="ms-3 mb-4">Agregar Tarea</h2>
       <AddTasksComponent></AddTasksComponent>
     </div>

@@ -1,6 +1,7 @@
 <template>
-  <form class="card d-flex w-50 mx-auto pt-4 pb-3 ps-2 pe-2">
-    <select id="employeeName" class="w-75 fieldsForm mt-3">
+  <div class="container">
+  <form class="card d-flex mx-auto pt-4 pb-3 ps-2 pe-2">
+    <select id="employeeName" class="fieldsForm mt-3">
       <option class="form-select">Nombre del empleado</option>
       <option  v-for="employee in employees" :key="employee._id">
         {{ employee.name }}
@@ -19,6 +20,7 @@
       </button>
     </div>
   </form>
+</div>
 </template>
 <script>
 import axios from "axios";
@@ -49,11 +51,11 @@ export default {
 </script>
 <style scoped>
  form {
-    width: 80% !important;
+    width: 90% !important;
   }
 .card {
   background: #f4f4f4;
-  box-shadow: 0px 4px 15px #333;
+  box-shadow: 0px 4px 10px #333;
 }
 .fieldsForm {
   margin: auto;
