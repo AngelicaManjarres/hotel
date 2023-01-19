@@ -1,8 +1,8 @@
 <template>
-<div class="searchbar">
+<div class="searchbar pe-3">
 
-    <input type="text" placeholder="Buscar">
-    <select>
+    <input class="w-100" type="text" placeholder="Buscar">
+    <select class="w-100">
         <option value="">Mas reciente</option>
         <option value="">Valor</option>
         <option value="">Cantidad</option>
@@ -21,7 +21,6 @@ export default {
 <style scoped>
 
 input, select {
-    width: 77vw;
     margin-bottom: 10px;
     border: 0.5px solid #666;
 }

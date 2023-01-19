@@ -41,6 +41,17 @@ const routes = [
     path: '/booking',
     name: 'booking',
     component: () => import('../views/BookingView')
+  },
+  {
+    path: '/addBooking',
+    name: 'addBoking',
+    component: () => import('../views/AddBookingView')
+  },
+  {
+    path: '/singleBooking/:id',
+    name: 'singleBooking',
+    props: true,
+    component: () => import('../views/SingleBookingView')
   }
 ]
 
