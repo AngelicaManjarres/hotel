@@ -4,7 +4,10 @@ import router from '@/router'
 
 export default createStore({
   state: {
-    user: null,
+    user:{
+      user:"Aleja",
+      role:"admin",
+    },
     bookings: [
       {id: 1, content: 'Juan Lopez', start: '2023-01-03', end: '2023-01-05', group:0, style: 'background: pink'},
       {id: 2, content: 'Ana Torres', start: '2023-01-04', end: '2023-01-09', group:1, style: 'background: cyan'},

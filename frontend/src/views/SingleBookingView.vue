@@ -14,7 +14,7 @@
                 <img src="imagen">
                 <div class="mt-3">
                     <button @click="$router.push('/addBooking')" class="btn btn-info">Editar reserva</button>
-                    <button class="btn btn-success mt-2">Eliminar reserva</button>
+                    <button class="btn btn-danger mt-2">Eliminar reserva</button>
                 </div>
                 
             </div>

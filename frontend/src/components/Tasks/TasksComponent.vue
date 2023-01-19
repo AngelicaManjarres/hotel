@@ -43,7 +43,7 @@ export default {
   methods: {},
   async created() {
     try {
-      let res = await axios.get("http://localhost:3000/tasks");
+      let res = await axios.get("http://localhost:4200/admin/tasks");
       this.tasks = res.data;
       console.log(this.tasks);
     } catch (err) {
