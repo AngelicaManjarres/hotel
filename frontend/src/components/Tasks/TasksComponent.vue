@@ -82,4 +82,6 @@ export default {
 .border-left-red {
   border-left: 4px solid crimson;
 }
+
 </style>
+
