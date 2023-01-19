@@ -13,8 +13,8 @@
                 <p>Metodo de pago: -</p>
                 <img src="imagen">
                 <div class="mt-3">
-                    <button @click="$router.push('/addBooking')" class="btn btn-info">Editar reserva</button>
-                    <button class="btn btn-danger mt-2">Eliminar reserva</button>
+                    <button @click="$router.push('/addBooking')" class="btn btn-sm btn-info">Editar reserva</button>
+                    <button class="btn btn-danger btn-sm mt-2">Eliminar reserva</button>
                 </div>
                 
             </div>
