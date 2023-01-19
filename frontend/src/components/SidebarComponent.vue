@@ -49,6 +49,7 @@ export default {
 .sidebar {
   height: 100vh;
   position: absolute;
+  z-index: 999;
 }
 
 .nav li {

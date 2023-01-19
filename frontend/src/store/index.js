@@ -22,7 +22,6 @@ export default createStore({
       {id: 4, content: 'Hab 105', style: 'border-bottom: 3px solid #0D22D7; font-size: 13px'},
       {id: 5, content: 'Hab 106', style: 'border-bottom: 3px solid #0D22D7; font-size: 13px'}
   ]
->>>>>>> 06f93201a24959be6c32411ddbd2d8abc4edef7a
   },
   getters: {
   },
