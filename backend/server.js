@@ -21,7 +21,7 @@ app.use(morgan('dev'))
 
 //Defining body parser as a json object
 app.use(express.json())
-
+app.use(express.urlencoded({extended:false}))
 //Defining routes for each type of user
 app.use('/', loginRouter)
 app.use('/admin', adminRouter)

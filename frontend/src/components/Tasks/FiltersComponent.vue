@@ -1,8 +1,8 @@
 <template>
-  <div class="row text-right d-flex justify-content-end pe-3">
-    <div class="col-12 col-sm-6 mb-3 d-flex justify-content-evenly">
+  <div class="row text-right d-flex w-75 justify-content-end ms-5">
+    <div class="col-12 col-sm-6 mb-2">
       <div>
-        <select class="form-select me-3">
+        <select class="form-select mb-2">
           <option value="order">Organizar por fecha</option>
         </select>
       </div>
@@ -15,4 +15,9 @@
 
 <script>
 </script>
+<style scoped>
+option{
+  width: 50% !important;  
+}
+</style>
 

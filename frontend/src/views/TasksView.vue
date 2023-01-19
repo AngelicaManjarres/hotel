@@ -4,7 +4,7 @@
     <Header />
     <Sidebar />
     <div class="container">
-      <h2>Tareas</h2>
+      <h2 class="ms-5 mb-3">Tareas</h2>
 
       <div v-if="user">
         <div v-if="user.role == 'admin'">
@@ -53,14 +53,10 @@ export default {
   },
 };
 </script>
-
-
-
-
 <style scoped>
 .container {
   margin-top: 2rem;
-  margin-left: 4rem;
+  margin-left:10px;
 }
 
 h2 {

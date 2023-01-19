@@ -37,10 +37,15 @@ import axios from "axios";
 export default {
   data() {
     return {
-      tasks: [],      
+      tasks: [],
+      alertDisplay:false,
     };
   },
-  methods: {},
+  methods: {
+    deleteTask() {
+      this.alertDisplay=true;
+    },
+  },
   async created() {
     try {
       let res = await axios.get("http://localhost:4200/admin/tasks");
@@ -49,16 +54,27 @@ export default {
     } catch (err) {
       console.log(err);
     }
-    console.log(this.$store.state.user)
+    console.log(this.$store.state.user);
   },
 };
 </script>
 <style scoped>
 .card {
-  background: #F4F4F4;
+  background: #f4f4f4;
   box-shadow: 0px 4px 15px #333;
 }
-
+.card-body {
+  display: flex;
+  justify-content: space-between;
+}
+.icons {
+  display: flex;
+  height: 50px;
+}
+.alert{
+  position:fixed !important;
+  top: 300px !important;
+}
 .border-left-green {
   border-left: 4px solid chartreuse;
 }
@@ -68,3 +84,4 @@ export default {
 }
 
 </style>
+
