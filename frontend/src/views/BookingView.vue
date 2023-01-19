@@ -18,8 +18,6 @@ export default {
         Header,
         Sidebar
     }
-    
-
 }
 </script>
 
