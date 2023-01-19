@@ -3,7 +3,7 @@
     <Header />
     <Sidebar />
 
-    <div class="stock">
+    <div class="ms-5 ps-2 mt-4">
         <h2>Inventario</h2>
         <div class="search">
             <Search />
@@ -42,12 +42,6 @@ export default {
 </script>
 
 <style scoped>
-
-.stock {
-  margin-top: 2rem;
-  margin-left: 4rem;
-  font-size: 16px;
-}
 
 .search {
     margin-top: 1rem;
